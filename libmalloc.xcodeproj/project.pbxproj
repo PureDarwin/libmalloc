@@ -12,7 +12,6 @@
 			buildConfigurationList = 3FE9201216A9111000D1238A /* Build configuration list for PBXAggregateTarget "libmalloc" */;
 			buildPhases = (
 				3FC1927C16DD946500315C26 /* Install Man Pages */,
-				3FE9201D16A9143E00D1238A /* Sanitise Headers (rdar://problem/10241868) */,
 			);
 			dependencies = (
 				C0CE45501C52CCBD00C24048 /* PBXTargetDependency */,
@@ -311,7 +310,6 @@
 		3FE91FDA16A90A8D00D1238A /* nano_malloc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = nano_malloc.c; sourceTree = "<group>"; };
 		3FE91FE016A90A8D00D1238A /* libmalloc.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = libmalloc.xcconfig; sourceTree = "<group>"; };
 		3FE91FE116A90A8D00D1238A /* libmalloc_eos.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = libmalloc_eos.xcconfig; sourceTree = "<group>"; };
-		3FE91FE316A90A8D00D1238A /* sanitise_headers.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = sanitise_headers.sh; sourceTree = "<group>"; };
 		3FE91FE816A90AEC00D1238A /* libsystem_malloc.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libsystem_malloc.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE91FF916A90BEF00D1238A /* malloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = malloc.h; sourceTree = "<group>"; };
 		3FE91FFB16A90E6C00D1238A /* legacy_malloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = legacy_malloc.h; sourceTree = "<group>"; };
@@ -552,7 +550,6 @@
 			isa = PBXGroup;
 			children = (
 				3FC452FF18E4ABFE003D6A38 /* manpages.sh */,
-				3FE91FE316A90A8D00D1238A /* sanitise_headers.sh */,
 				C92853A01C767F08001FEAF3 /* install-codes.sh */,
 			);
 			path = xcodescripts;
@@ -947,21 +944,6 @@
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = "/bin/bash -e";
 			shellScript = ". \"${SCRIPT_INPUT_FILE_0}\"";
-		};
-		3FE9201D16A9143E00D1238A /* Sanitise Headers (rdar://problem/10241868) */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/xcodescripts/sanitise_headers.sh",
-			);
-			name = "Sanitise Headers (rdar://problem/10241868)";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = ". \"${SCRIPT_INPUT_FILE_0}\"\n";
 		};
 		B629CF2A202BB226007719B9 /* Symlink normal variant */ = {
 			isa = PBXShellScriptBuildPhase;
